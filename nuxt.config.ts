@@ -8,4 +8,19 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    modules: ["@nuxtjs/google-fonts"],
+
+    googleFonts: {
+        families: {
+            "Playfair Display": {
+                wght: [400, 600, 700, 800],
+            },
+            Inter: {
+                wght: [400, 500, 600],
+            },
+        },
+        display: "swap",
+        preconnect: true,
+        preload: true,
+    },
 });
