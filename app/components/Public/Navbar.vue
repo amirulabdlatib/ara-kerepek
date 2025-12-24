@@ -8,15 +8,14 @@
                     <span class="font-bold text-primary text-lg">Ara Kerepek</span>
                 </NuxtLink>
 
-                <!-- Desktop Navigation -->
+                <!-- Desktop Navigation Group -->
                 <div class="hidden md:flex items-center gap-8">
-                    <NuxtLink v-for="item in navItems" :key="item.path" :to="item.path" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">
-                        {{ item.label }}
-                    </NuxtLink>
-                </div>
+                    <div class="flex items-center gap-8">
+                        <NuxtLink v-for="item in navItems" :key="item.path" :to="item.path" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">
+                            {{ item.label }}
+                        </NuxtLink>
+                    </div>
 
-                <!-- Desktop Cart Button -->
-                <div class="hidden md:block">
                     <button class="flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-dark transition-colors duration-200">
                         <Icon name="mdi:cart-outline" class="text-lg" />
                         <span>Cart ({{ cartCount }})</span>
@@ -63,7 +62,7 @@
     const cartCount = ref(0);
 
     const navItems = [
-        { label: "Home", path: "/" },
+        { label: "Utama", path: "/" },
         { label: "Produk", path: "/produk" },
     ];
 
