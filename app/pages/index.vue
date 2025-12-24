@@ -2,6 +2,7 @@
     <div class="bg-secondary min-h-screen">
         <Hero />
         <WhyChooseUs />
+        <HowToOrder />
     </div>
 </template>
 
