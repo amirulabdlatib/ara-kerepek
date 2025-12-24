@@ -1,6 +1,7 @@
 <template>
     <div class="bg-secondary min-h-screen">
         <Hero />
+        <WhyChooseUs />
     </div>
 </template>
 
