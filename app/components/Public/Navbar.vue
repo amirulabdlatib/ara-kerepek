@@ -1,30 +1,30 @@
 <template>
     <nav class="bg-secondary border-b border-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-14">
                 <!-- Logo -->
                 <NuxtLink to="/" class="flex items-center gap-2">
-                    <NuxtImg src="/images/ara-kerepek-icon.png" alt="Ara Kerepek Logo" class="w-8 h-8 object-contain" />
-                    <span class="font-bold text-primary text-lg">Ara Kerepek</span>
+                    <NuxtImg src="/images/ara-kerepek-icon.png" alt="Ara Kerepek Logo" class="w-7 h-7 object-contain" />
+                    <span class="font-semibold text-primary text-base">Ara Kerepek</span>
                 </NuxtLink>
 
                 <!-- Desktop Navigation Group -->
-                <div class="hidden md:flex items-center gap-8">
-                    <div class="flex items-center gap-8">
-                        <NuxtLink v-for="item in navItems" :key="item.path" :to="item.path" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">
+                <div class="hidden md:flex items-center gap-6">
+                    <div class="flex items-center gap-6">
+                        <NuxtLink v-for="item in navItems" :key="item.path" :to="item.path" class="text-sm text-gray-700 hover:text-primary transition-colors duration-200 font-medium">
                             {{ item.label }}
                         </NuxtLink>
                     </div>
 
-                    <button class="flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-dark transition-colors duration-200">
-                        <Icon name="mdi:cart-outline" class="text-lg" />
+                    <button class="flex items-center gap-1.5 bg-primary text-white px-4 py-1.5 rounded-full hover:bg-primary-dark transition-colors duration-200 text-sm">
+                        <Icon name="mdi:cart-outline" class="text-base" />
                         <span>Cart ({{ cartCount }})</span>
                     </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button @click="toggleMenu" class="md:hidden p-2 rounded-lg hover:bg-secondary-accent transition-colors duration-200" aria-label="Toggle menu">
-                    <Icon :name="isMenuOpen ? 'mdi:close' : 'mdi:menu'" class="text-2xl text-primary" />
+                <button @click="toggleMenu" class="md:hidden p-1.5 rounded-lg hover:bg-secondary-accent transition-colors duration-200" aria-label="Toggle menu">
+                    <Icon :name="isMenuOpen ? 'mdi:close' : 'mdi:menu'" class="text-xl text-primary" />
                 </button>
             </div>
         </div>
@@ -38,17 +38,17 @@
             leave-from-class="opacity-100 max-h-96"
             leave-to-class="opacity-0 max-h-0">
             <div v-show="isMenuOpen" class="md:hidden overflow-hidden border-t border-border">
-                <div class="px-4 py-4 space-y-3 bg-secondary">
+                <div class="px-4 py-3 space-y-2 bg-secondary">
                     <NuxtLink
                         v-for="item in navItems"
                         :key="item.path"
                         :to="item.path"
                         @click="closeMenu"
-                        class="block px-4 py-3 text-gray-700 hover:bg-secondary-accent hover:text-primary rounded-lg transition-colors duration-200 font-medium">
+                        class="block px-3 py-2 text-sm text-gray-700 hover:bg-secondary-accent hover:text-primary rounded-lg transition-colors duration-200 font-medium">
                         {{ item.label }}
                     </NuxtLink>
-                    <button class="w-full flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition-colors duration-200 font-medium">
-                        <Icon name="mdi:cart-outline" class="text-lg" />
+                    <button class="w-full flex items-center justify-center gap-1.5 bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-dark transition-colors duration-200 text-sm font-medium">
+                        <Icon name="mdi:cart-outline" class="text-base" />
                         <span>Cart ({{ cartCount }})</span>
                     </button>
                 </div>
