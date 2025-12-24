@@ -30,10 +30,19 @@
                 </div>
             </div>
 
-            <!-- Right Image -->
+            <!-- Right Image with Micro-interactions -->
             <div class="order-first lg:order-last">
-                <div class="relative">
-                    <NuxtImg src="/images/hero-section-img.png" alt="Kerepek dengan Kuah Rojak" class="w-full h-auto rounded-2xl shadow-2xl object-cover" loading="eager" />
+                <div class="relative group">
+                    <!-- Animated background blob -->
+                    <div class="absolute -inset-4 bg-linear-to-r from-primary/10 to-primary/5 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+
+                    <!-- Image container -->
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl group-hover:shadow-primary/20 transition-all duration-300">
+                        <NuxtImg src="/images/hero-section-img.png" alt="Kerepek dengan Kuah Rojak" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" loading="eager" />
+
+                        <!-- Subtle overlay on hover -->
+                        <div class="absolute inset-0 bg-linear-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                 </div>
             </div>
         </div>
