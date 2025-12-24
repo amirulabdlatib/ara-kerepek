@@ -23,7 +23,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button @click="toggleMenu" class="md:hidden p-1.5 rounded-lg hover:bg-secondary-accent transition-colors duration-200" aria-label="Toggle menu">
+                <button class="md:hidden p-1.5 rounded-lg hover:bg-secondary-accent transition-colors duration-200" aria-label="Toggle menu" @click="toggleMenu">
                     <Icon :name="isMenuOpen ? 'mdi:close' : 'mdi:menu'" class="text-xl text-primary" />
                 </button>
             </div>
@@ -43,8 +43,8 @@
                         v-for="item in navItems"
                         :key="item.path"
                         :to="item.path"
-                        @click="closeMenu"
-                        class="block px-3 py-2 text-sm text-gray-700 hover:bg-secondary-accent hover:text-primary rounded-lg transition-colors duration-200 font-medium">
+                        class="block px-3 py-2 text-sm text-gray-700 hover:bg-secondary-accent hover:text-primary rounded-lg transition-colors duration-200 font-medium"
+                        @click="closeMenu">
                         {{ item.label }}
                     </NuxtLink>
                     <button class="w-full flex items-center justify-center gap-1.5 bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-dark transition-colors duration-200 text-sm font-medium">
