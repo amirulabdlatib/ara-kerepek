@@ -16,10 +16,10 @@
                         </NuxtLink>
                     </div>
 
-                    <button class="flex items-center gap-1.5 bg-primary text-white px-4 py-1.5 rounded-full hover:bg-primary-dark transition-colors duration-200 text-sm">
+                    <NuxtLink to="/pembayaran" class="flex items-center gap-1.5 bg-primary text-white px-4 py-1.5 rounded-full hover:bg-primary-dark transition-colors duration-200 text-sm">
                         <Icon name="mdi:cart-outline" class="text-base" />
-                        <span>Cart ({{ cartCount }})</span>
-                    </button>
+                        <span>Troli ({{ cartCount }})</span>
+                    </NuxtLink>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -36,7 +36,8 @@
             enter-to-class="opacity-100 max-h-96"
             leave-active-class="transition-all duration-200 ease-in"
             leave-from-class="opacity-100 max-h-96"
-            leave-to-class="opacity-0 max-h-0">
+            leave-to-class="opacity-0 max-h-0"
+        >
             <div v-show="isMenuOpen" class="md:hidden overflow-hidden border-t border-border">
                 <div class="px-4 py-3 space-y-2 bg-secondary">
                     <NuxtLink
@@ -44,13 +45,14 @@
                         :key="item.path"
                         :to="item.path"
                         class="block px-3 py-2 text-sm text-gray-700 hover:bg-secondary-accent hover:text-primary rounded-lg transition-colors duration-200 font-medium"
-                        @click="closeMenu">
+                        @click="closeMenu"
+                    >
                         {{ item.label }}
                     </NuxtLink>
-                    <button class="w-full flex items-center justify-center gap-1.5 bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-dark transition-colors duration-200 text-sm font-medium">
+                    <NuxtLink to="/pembayaran" class="w-full flex items-center justify-center gap-1.5 bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-dark transition-colors duration-200 text-sm font-medium">
                         <Icon name="mdi:cart-outline" class="text-base" />
-                        <span>Cart ({{ cartCount }})</span>
-                    </button>
+                        <span>Troli ({{ cartCount }})</span>
+                    </NuxtLink>
                 </div>
             </div>
         </Transition>
